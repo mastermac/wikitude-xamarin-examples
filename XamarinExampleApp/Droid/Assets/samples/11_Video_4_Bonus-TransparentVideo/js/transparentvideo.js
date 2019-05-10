@@ -113,10 +113,11 @@ var World = {
             },
             onImageRecognized: function onImageRecognizedFn() {
                 video.resume();
-                World.hideInfoBar();
+                World.showInfoBar();
             },
             onImageLost: function onImageLostFn() {
                 video.pause();
+                World.hideInfoBar();
             },
             onError: World.onError
         });
@@ -134,12 +135,12 @@ var World = {
         alert(error);
     },
 
-    hideInfoBar: function hideInfoBarFn() {
-        document.getElementById("infoBox").style.display = "none";
+    showInfoBar: function imageDetected() {
+        document.getElementById("infoBox").style.display = "block";
     },
-
-    showInfoBar: function worldLoadedFn() {
-        document.getElementById("infoBox").style.display = "table";
+    
+    hideInfoBar: function worldLoadedFn() {
+        document.getElementById("infoBox").style.display = "none";
         document.getElementById("loadingMessage").style.display = "none";
     }
 };
