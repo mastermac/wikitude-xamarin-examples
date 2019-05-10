@@ -23,7 +23,7 @@ var World = {
             function for the onError trigger which provides a sting containing a description of the error.
          */
         this.tracker = new AR.ImageTracker(this.targetCollectionResource, {
-            onTargetsLoaded: World.showInfoBar,
+            onTargetsLoaded: World.hideInfoBar,
             onError: World.onError
         });
 
@@ -93,10 +93,20 @@ var World = {
         this.imgButton = new AR.ImageResource("assets/wwwButton.jpg", {
             onError: World.onError
         });
+        this.star = new AR.ImageResource("assets/director.png", {
+            onError: World.onError
+        });
         var pageOneButton = this.createWwwButton("https://www.blue-tomato.com/en-US/products/?q=sup", 0.1, {
             translate: {
                 x: -0.05,
                 y: 0.2
+            },
+            zOrder: 1
+        });
+        var pageTwoButton = this.createStar("https://www.blue-tomato.com/en-US/products/?q=sup", 0.05, {
+            translate: {
+                x: 0.25,
+                y: 0.0
             },
             zOrder: 1
         });
@@ -109,7 +119,7 @@ var World = {
         */
         this.trackable = new AR.ImageTrackable(this.tracker, "pageOne", {
             drawables: {
-                cam: [video, pageOneButton]
+                cam: [video, pageOneButton, pageTwoButton]
             },
             onImageRecognized: function onImageRecognizedFn() {
                 video.resume();
@@ -129,6 +139,13 @@ var World = {
             AR.context.openInBrowser(url);
         };
         return new AR.ImageDrawable(this.imgButton, size, options);
+    },
+    createStar: function createStarFn(url, size, options) {
+        options.onClick = function () {
+            /* this call opens a url in a browser window. */
+            AR.context.openInBrowser(url);
+        };
+        return new AR.ImageDrawable(this.star, size, options);
     },
 
     onError: function onErrorFn(error) {

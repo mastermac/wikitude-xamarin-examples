@@ -155,7 +155,9 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\star.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\samples\ade.js" />
     <AndroidAsset Include="Assets\samples\samples.json" />
