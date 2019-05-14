@@ -75,7 +75,9 @@ namespace XamarinExampleApp.Droid.Advanced
             else
             {
                 this.screenCapture = screenCapture;
-                ArchitectView.PermissionManager.CheckPermissions(this, new string[] { Manifest.Permission.WriteExternalStorage }, 123, this);
+                // Call to API to get who the person is
+                architectView.CallJavascript("World.sendDataFromXam(\"ShubhamGupta\")");
+//              ArchitectView.PermissionManager.CheckPermissions(this, new string[] { Manifest.Permission.WriteExternalStorage }, 123, this);
             }
         }
 

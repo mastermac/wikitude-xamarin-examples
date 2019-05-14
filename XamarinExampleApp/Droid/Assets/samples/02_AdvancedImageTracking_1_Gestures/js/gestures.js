@@ -166,6 +166,10 @@ var World = {
         }
     },
 
+    sendDataFromXam: function sendDataFromXamFn(name) {
+        alert(name);
+    },
+
     imageLost: function() {
         if (World.targetAcquired) {
             World.targetAcquired = false;
@@ -248,6 +252,7 @@ var World = {
     },
 
     hideInfoBar: function hideInfoBarFn() {
+        alert("Done");
         document.getElementById("infoBox").style.display = "none";
     },
 
