@@ -167,7 +167,19 @@ var World = {
     },
 
     sendDataFromXam: function sendDataFromXamFn(name) {
-        alert(name);
+        //alert(name);
+        var LocalBanda = "";
+        switch (name) {
+            case "2a8e3f8f-a43c-4812-b38a-5f1c49ccae83": LocalBanda = "shubham";
+                break;
+            case "93db0b5b-2102-4bad-ac49-2a90c88a6566": LocalBanda = "rohan";
+                break;
+            default: LocalBanda = "unknown";
+        }
+        if (World.banda != LocalBanda) {
+            World.banda = LocalBanda;
+            alert(LocalBanda);
+        }
     },
 
     imageLost: function() {
@@ -205,19 +217,19 @@ var World = {
 
     /* Makes an overlay visible by enabling its AR.ImageTrackable. */
     showOverlay: function(index) {
-        if (World.targetAcquired) {
+        //if (World.targetAcquired) {
             if (!this.imageTrackables[index].enabled) {
                 this.imageTrackables[index].enabled = true;
 
                 this.appearingAnimations[index].start();
             }
-        }
+        //}
     },
 
     /* Resets all overlays to their initial values and disables their AR.ImageTrackables so they become invisible. */
     clearOverlays: function() {
 
-        if (World.targetAcquired) {
+        //if (World.targetAcquired) {
             for (var i = 0; i < this.overlays.length; i++) {
                 World.resetOverlayWithIndex(i);
             }
@@ -225,7 +237,7 @@ var World = {
                 this.imageTrackables[u].enabled = false;
             }
             World.initPositionValues();
-        }
+        //}
     },
 
     /* Resets the parameters of an overlay to its initial values. */
@@ -240,11 +252,11 @@ var World = {
 
     /* Takes a screenshot. */
     captureScreen: function captureScreenFn() {
-        if (World.targetAcquired) {
+        //if (World.targetAcquired) {
             AR.platform.sendJSONObject({
                 action: "capture_screen"
             });
-        }
+        //}
     },
 
     onError: function onErrorFn(error) {
