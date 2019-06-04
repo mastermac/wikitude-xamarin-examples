@@ -12,7 +12,7 @@ var World = {
             Each target in the target collection is identified by its target name. By using this
             target name, it is possible to create an AR.ImageTrackable for every target in the target collection.
          */
-        this.targetCollectionResource = new AR.TargetCollectionResource("assets/magazine.wtc", {
+        this.targetCollectionResource = new AR.TargetCollectionResource("assets/tracker_sita1.wtc", {
             onError: World.onError
         });
 
@@ -80,36 +80,36 @@ var World = {
             Adding the transparent H.264 video to a target image is easy and accomplished in the same way as any
             other video is added. Just make sure to set the isTransparent property of the AR.VideoDrawable to true.
         */
-        var video = new AR.VideoDrawable("assets/transparentVideo.mp4", 0.7, {
+        var video = new AR.VideoDrawable("assets/hemal.mp4", 0.9, {
             translate: {
-                x: -0.2,
-                y: -0.12
+                x: -0.5,
+                y: 0.0
             },
             isTransparent: true,
             onError: World.onError
         });
 
         /* Create a button which opens a website in a browser window after a click. */
-        this.imgButton = new AR.ImageResource("assets/wwwButton.jpg", {
-            onError: World.onError
-        });
+        //this.imgButton = new AR.ImageResource("assets/wwwButton.jpg", {
+        //    onError: World.onError
+        //});
         this.star = new AR.ImageResource("assets/director.png", {
             onError: World.onError
         });
-        var pageOneButton = this.createWwwButton("https://www.blue-tomato.com/en-US/products/?q=sup", 0.1, {
-            translate: {
-                x: -0.05,
-                y: 0.2
-            },
-            zOrder: 1
-        });
-        var pageTwoButton = this.createStar("https://www.blue-tomato.com/en-US/products/?q=sup", 0.05, {
-            translate: {
-                x: 0.25,
-                y: 0.0
-            },
-            zOrder: 1
-        });
+        //var pageOneButton = this.createWwwButton("https://www.blue-tomato.com/en-US/products/?q=sup", 0.1, {
+        //    translate: {
+        //        x: -0.05,
+        //        y: 0.2
+        //    },
+        //    zOrder: 1
+        //});
+        //var pageTwoButton = this.createStar("https://www.blue-tomato.com/en-US/products/?q=sup", 0.05, {
+        //    translate: {
+        //        x: 0.25,
+        //        y: 0.0
+        //    },
+        //    zOrder: 1
+        //});
         video.play(-1);
         video.pause();
 
@@ -117,9 +117,9 @@ var World = {
             Adding the video to the image target is straight forward and similar like adding any other drawable to
             an image target.
         */
-        this.trackable = new AR.ImageTrackable(this.tracker, "pageOne", {
+        this.trackable = new AR.ImageTrackable(this.tracker, "*", {
             drawables: {
-                cam: [video, pageOneButton, pageTwoButton]
+                cam: [video]
             },
             onImageRecognized: function onImageRecognizedFn() {
                 video.resume();

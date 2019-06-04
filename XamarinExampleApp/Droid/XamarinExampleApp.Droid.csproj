@@ -132,6 +132,8 @@
     <Compile Include="Util\Adapters\UrlLauncherStorageListAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\tracker.wtc" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
@@ -166,6 +168,8 @@
     <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\star.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\tracker_sita.wtc" />
+    <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\tracker_sita1.wtc" />
     <AndroidAsset Include="Assets\samples\ade.js" />
     <AndroidAsset Include="Assets\samples\samples.json" />
     <AndroidAsset Include="Assets\samples\01_ImageTracking_1_ImageOnTarget\index.html" />
@@ -886,6 +890,36 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\director.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\patent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\inspire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\hackathon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\csr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\DellLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\hemal.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\hemal.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\hemal.mp4" />
   </ItemGroup>
   <Import Project="..\XamarinExampleApp\XamarinExampleApp.projitems" Label="Shared" Condition="Exists('..\XamarinExampleApp\XamarinExampleApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -125,6 +125,7 @@ namespace XamarinExampleApp.Droid.Advanced
     public class ScreenshotActivity : SimpleArActivity, IArchitectJavaScriptInterfaceListener, ArchitectView.ICaptureScreenCallback, IPermissionManagerPermissionManagerCallback
     {
         private Bitmap screenCapture;
+        public string usecase="";
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -170,6 +171,21 @@ namespace XamarinExampleApp.Droid.Advanced
                  * OnScreenCaptured will be called once the ArchitectView has processed the screen capturing and will
                  * provide a Bitmap containing the screenshot.
                  */
+                usecase = "capture_screen";
+                architectView.CaptureScreen(ArchitectView.CaptureScreenCallback.CaptureModeCamAndWebview, this);
+            }
+            else if (jsonObject.GetString("action") == "share_screen")
+            {
+                /*
+                 * ArchitectView.CaptureScreen has two different modes:
+                 *  - CaptureModeCamAndWebview which will capture the camera and web-view on top of it.
+                 *  - CaptureModeCam which will capture ONLY the camera and its content (AR.Drawables).
+                 *
+                 * OnScreenCaptured will be called once the ArchitectView has processed the screen capturing and will
+                 * provide a Bitmap containing the screenshot.
+                 */
+                usecase = "share_screen";
+
                 architectView.CaptureScreen(ArchitectView.CaptureScreenCallback.CaptureModeCamAndWebview, this);
             }
         }
@@ -180,7 +196,7 @@ namespace XamarinExampleApp.Droid.Advanced
             {
                 Toast.MakeText(this, Resource.String.error_screen_capture, ToastLength.Short);
             }
-            else
+            else if(usecase == "capture_screen")
             {
                 this.screenCapture = screenCapture;
                 byte[] bitmapData;
@@ -203,6 +219,12 @@ namespace XamarinExampleApp.Droid.Advanced
                 
 //              ArchitectView.PermissionManager.CheckPermissions(this, new string[] { Manifest.Permission.WriteExternalStorage }, 123, this);
             }
+            else if (usecase == "share_screen")
+            {
+                this.screenCapture = screenCapture;
+                ArchitectView.PermissionManager.CheckPermissions(this, new string[] { Manifest.Permission.WriteExternalStorage }, 123, this);
+                architectView.CallJavascript("World.resetCamButton()");
+            }
         }
         // Gets the analysis of the specified image by using the Face REST API.
         public async void MakeAnalysisRequest(byte[] byteData)
@@ -211,7 +233,7 @@ namespace XamarinExampleApp.Droid.Advanced
 
             // Request headers.
             client.DefaultRequestHeaders.Add(
-                "Ocp-Apim-Subscription-Key", "71fd411fa2d54fcbbb056f6474925e00");
+                "Ocp-Apim-Subscription-Key", "227cfeff04bc44adb393c19fcbb5da23");
 
             // Request parameters. A third optional parameter is "details".
             string requestParameters = "returnFaceId=true&returnFaceLandmarks=false" +
@@ -251,7 +273,7 @@ namespace XamarinExampleApp.Droid.Advanced
                         request.AddHeader("postman-token", "bab5b421-1b8d-8a55-a72d-7bb21392cf5a");
                         request.AddHeader("cache-control", "no-cache");
                         request.AddHeader("content-type", "application/json");
-                        request.AddHeader("ocp-apim-subscription-key", "71fd411fa2d54fcbbb056f6474925e00");
+                        request.AddHeader("ocp-apim-subscription-key", "227cfeff04bc44adb393c19fcbb5da23");
                         request.AddParameter("application/json", "{\r\n    \"largePersonGroupId\": \"friends\",\r\n    \"faceIds\": [\r\n        \"" + FACEID + "\"\r\n    ],\r\n    \"maxNumOfCandidatesReturned\": 1,\r\n    \"confidenceThreshold\": 0.5\r\n}\r\n", ParameterType.RequestBody);
                         IRestResponse response1 = client1.Execute(request);
                         if (response1.Content.ToString().ToLowerInvariant().Contains("personid"))

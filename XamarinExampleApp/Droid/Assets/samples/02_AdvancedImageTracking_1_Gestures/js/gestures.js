@@ -1,5 +1,5 @@
 var defaultScaleValue = 0.5;
-
+var video;
 var previousRotationValue = [];
 var previousScaleValue = [];
 
@@ -13,11 +13,11 @@ var World = {
     paths: [
         "assets/christmas_hat.png",
         "assets/police_hat.png",
-        "assets/glasses.png",
-        "assets/mirror_sunglasses.png",
-        "assets/beard_01.png",
-        "assets/beard_02.png",
-        "assets/beard_03.png"
+        "assets/inspire.png",
+        "assets/patent.png",
+        "assets/hackathon.png",
+        "assets/hackathon.png",
+        "assets/csr.png"
     ],
     imageTrackables: [],
     overlays: [],
@@ -36,7 +36,7 @@ var World = {
             Each target in the target collection is identified by its target name. By using this
             target name, it is possible to create an AR.ImageTrackable for every target in the target collection.
          */
-        this.targetCollectionResource = new AR.TargetCollectionResource("assets/face.wtc", {
+        this.targetCollectionResource = new AR.TargetCollectionResource("assets/tracker.wtc", {
             onError: World.onError
         });
 
@@ -48,6 +48,31 @@ var World = {
          */
         this.tracker = new AR.ImageTracker(this.targetCollectionResource, {
             onTargetsLoaded: World.showInfoBar,
+            onError: World.onError
+        });
+        video = new AR.VideoDrawable("assets/hemal.mp4", 0.9, {
+            translate: {
+                x: -0.5,
+                y: 0.0
+            },
+            isTransparent: true,
+            onError: World.onError
+        });
+        video.play(-1);
+        video.pause();
+
+        this.trackable = new AR.ImageTrackable(this.tracker, "*", {
+            drawables: {
+                cam: [video]
+            },
+            onImageRecognized: function onImageRecognizedFn() {
+                video.resume();
+                World.showInfoBar();
+            },
+            onImageLost: function onImageLostFn() {
+                video.pause();
+                World.hideInfoBar();
+            },
             onError: World.onError
         });
 
@@ -157,7 +182,8 @@ var World = {
         this.imageTrackables.push(imageTrackable);
     },
 
-    imageRecognized: function() {
+    imageRecognized: function () {
+        video.resume();
         if (!World.targetAcquired) {
             World.targetAcquired = true;
             document.getElementById("overlayPicker").className = "overlayPicker";
@@ -165,27 +191,51 @@ var World = {
             World.hideInfoBar();
         }
     },
+    resetCamButton: function resetCamButtonFn() {
+        document.getElementById("camera").style.display = "block";
+        document.getElementById("sharing").style.display = "block";
 
+    },
     sendDataFromXam: function sendDataFromXamFn(name) {
         //alert(name);
         var LocalBanda = "";
+        var FunFact = "";
         switch (name) {
-            case "2a8e3f8f-a43c-4812-b38a-5f1c49ccae83": LocalBanda = "shubham";
+            case "74aa5027-ba7b-4141-892a-71fe71f79ee5": LocalBanda = "  Shubham Gupta - SE 2";
+                FunFact = "Fun Fact: Loves to watch cartoon in midnight!!";
                 break;
-            case "93db0b5b-2102-4bad-ac49-2a90c88a6566": LocalBanda = "rohan";
+            case "cfbce091-3809-4862-9664-f1e6ab2b0778": LocalBanda = "  Rohan Sharma - SE 2";
+                FunFact = "Fun Fact: Can chug liquor, Eat.FIT Promoter...";
+                break;
+            case "b9651132-83ff-44e8-923c-ded8b528f4b1": LocalBanda = "  Anushka Bose - Consultant";
+                FunFact = "Fun Fact: Mad about HUGO...";
+                break;
+            case "d01e544a-36c5-4fc6-b7d7-f918f9cc4635": LocalBanda = "  Sheenam Ohrie - VP";
+                FunFact = "Fun Fact: NOT FOUND!";
+                break;
+            case "9114135d-da83-4c3f-9618-a42acf8a3fe0": LocalBanda = "  Sita T - Director";
+                FunFact = "Fun Fact: A Shopaholic! ";
                 break;
             default: LocalBanda = "unknown";
         }
         if (World.banda != LocalBanda) {
             World.banda = LocalBanda;
-            alert(LocalBanda);
+            document.getElementById("username").innerHTML = LocalBanda;
+            document.getElementById("funfact").innerHTML = FunFact;
+            World.hideInfoBar();
         }
     },
 
-    imageLost: function() {
+    imageLost: function () {
+        video.pause();
         if (World.targetAcquired) {
+            World.showInfoBar();
             World.targetAcquired = false;
             document.getElementById("overlayPicker").className = "overlayPickerInactive";
+            document.getElementById("inspire").style.display = "none";
+            document.getElementById("patent").style.display = "none";
+            document.getElementById("hack").style.display = "none";
+            document.getElementById("csr").style.display = "none";
         }
     },
 
@@ -258,19 +308,48 @@ var World = {
             });
         //}
     },
+    shareScreen: function shareScreenFn() {
+        document.getElementById("camera").style.display = "none";
+        document.getElementById("sharing").style.display = "none";
+        AR.platform.sendJSONObject({
+            action: "share_screen"
+        });
+    },
+    playButton: function playButtonFn() {
+        video.resume();
+    },
+    showRecogs: function showRecogsFn() {
+        $("#poi-detail-title").html("Title");
+        $("#poi-detail-description").html("description");
+        $("#poi-detail-distance").html("Some Value");
+
+        /* Show panel. */
+        $("#panel-poidetail").panel("open", 123);
+    },
 
     onError: function onErrorFn(error) {
         alert(error);
     },
 
     hideInfoBar: function hideInfoBarFn() {
-        alert("Done");
-        document.getElementById("infoBox").style.display = "none";
+        document.getElementById("infoBox").style.display = "block";
+        document.getElementById("footer").style.display = "block";
+
+        document.getElementById("inspire").style.display = "block";
+        document.getElementById("patent").style.display = "block";
+        document.getElementById("hack").style.display = "block";
+        document.getElementById("csr").style.display = "block";
     },
 
     showInfoBar: function worldLoadedFn() {
-        document.getElementById("infoBox").style.display = "table";
+        document.getElementById("infoBox").style.display = "none";
         document.getElementById("loadingMessage").style.display = "none";
+        document.getElementById("footer").style.display = "none";
+
+        document.getElementById("inspire").style.display = "none";
+        document.getElementById("patent").style.display = "none";
+        document.getElementById("hack").style.display = "none";
+        document.getElementById("csr").style.display = "none";
     }
 };
 

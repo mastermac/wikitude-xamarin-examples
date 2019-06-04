@@ -36,14 +36,15 @@ var World = {
         var playButton = new AR.ImageDrawable(playButtonImg, 0.3, {
             enabled: false,
             clicked: false,
-            zOrder: 2,
+            zOrder: 1,
             onClick: function playButtonClicked() {
                 World.video.play(1);
                 World.video.playing = true;
                 playButton.clicked = true;
             },
             translate: {
-                y: -0.3
+                x: -0.8,
+                y: -0.2
             }
         });
 
@@ -75,11 +76,13 @@ var World = {
             the video is playing and the user is clicking the function pause() is called which then pauses
             playback. Clicking the video again resumes playback.
         */
-        this.video = new AR.VideoDrawable("assets/video.mp4", 0.40, {
+        this.video = new AR.VideoDrawable("assets/hemal.mp4", 1.5, {
             translate: {
-                y: playButton.translate.y
+                x: - 0.5,
+                y: 0.5
             },
             zOrder: 1,
+            isTransparent: true,
             onLoaded: function videoLoaded() {
                 playButton.enabled = true;
             },
@@ -96,9 +99,11 @@ var World = {
                 if (playButton.clicked) {
                     playButton.clicked = false;
                 } else if (World.video.playing) {
+                    //playButton.enabled = true;
                     World.video.pause();
                     World.video.playing = false;
                 } else {
+                    //playButton.enabled = false;
                     World.video.resume();
                     World.video.playing = true;
                 }
