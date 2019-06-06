@@ -554,7 +554,8 @@
                 "startupConfiguration": {
                     "camera_position": "back",
                     "camera_resolution": "auto"
-                }
+                },
+                "requiredExtension": "Screenshot"
             },
             {
                 "title": "Bonus: Transparent Video",

@@ -134,6 +134,8 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\tracker.wtc" />
     <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\face.wtc" />
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\tracker.wtc" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
@@ -920,6 +922,42 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\hemal.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\csr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\DellLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\hackathon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\inspire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\patent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\snapshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\js\jquery.mobile-1.3.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\js\jquery-1.9.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\css\jquery.mobile-1.3.2.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\css\jquery-mobile-transparent-ui-overlay.css" />
   </ItemGroup>
   <Import Project="..\XamarinExampleApp\XamarinExampleApp.projitems" Label="Shared" Condition="Exists('..\XamarinExampleApp\XamarinExampleApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

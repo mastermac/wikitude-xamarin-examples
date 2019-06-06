@@ -14,7 +14,7 @@ var World = {
             Each target in the target collection is identified by its target name. By using this
             target name, it is possible to create an AR.ImageTrackable for every target in the target collection.
          */
-        this.targetCollectionResource = new AR.TargetCollectionResource("assets/magazine.wtc", {
+        this.targetCollectionResource = new AR.TargetCollectionResource("assets/tracker.wtc", {
             onError: World.onError
         });
 
@@ -36,8 +36,9 @@ var World = {
         var playButton = new AR.ImageDrawable(playButtonImg, 0.3, {
             enabled: false,
             clicked: false,
-            zOrder: 1,
+            //zOrder: 999,
             onClick: function playButtonClicked() {
+                console.log("CLICKED");
                 World.video.play(1);
                 World.video.playing = true;
                 playButton.clicked = true;
@@ -76,12 +77,12 @@ var World = {
             the video is playing and the user is clicking the function pause() is called which then pauses
             playback. Clicking the video again resumes playback.
         */
-        this.video = new AR.VideoDrawable("assets/hemal.mp4", 1.5, {
+        this.video = new AR.VideoDrawable("assets/hemal.mp4", 1, {
             translate: {
-                x: - 0.5,
+                x: - 0.7,
                 y: 0.5
             },
-            zOrder: 1,
+            //zOrder: 99,
             isTransparent: true,
             onLoaded: function videoLoaded() {
                 playButton.enabled = true;
@@ -127,13 +128,13 @@ var World = {
             Of course the video will continue playing back in the meantime so that the user can watch the entire
             video without any interruption.
         */
-        this.pageOne = new AR.ImageTrackable(this.tracker, "pageOne", {
+        this.pageOne = new AR.ImageTrackable(this.tracker, "*", {
             drawables: {
                 cam: [World.video, playButton]
             },
             onImageRecognized: function onImageRecognizedFn() {
                 World.pageOne.snapToScreen.enabled = false;
-                World.hideInfoBar();
+                World.imageLost();
             },
             snapToScreen: {
                 enabledOnExitFieldOfVision: true,
@@ -143,18 +144,104 @@ var World = {
         });
     },
 
+    imageRecognized: function () {
+        //video.resume();
+        if (!World.targetAcquired) {
+            World.targetAcquired = true;
+            document.getElementById("overlayPicker").className = "overlayPicker";
+
+            World.hideInfoBar();
+        }
+    },
+    resetCamButton: function resetCamButtonFn() {
+        document.getElementById("camera").style.display = "block";
+        document.getElementById("sharing").style.display = "block";
+
+    },
+    sendDataFromXam: function sendDataFromXamFn(name) {
+        //alert(name);
+        var LocalBanda = "";
+        var FunFact = "";
+        switch (name) {
+            case "74aa5027-ba7b-4141-892a-71fe71f79ee5": LocalBanda = "  Shubham Gupta - SE 2";
+                FunFact = "Fun Fact: Loves to watch cartoon in midnight!!";
+                break;
+            case "cfbce091-3809-4862-9664-f1e6ab2b0778": LocalBanda = "  Rohan Sharma - SE 2";
+                FunFact = "Fun Fact: Can chug liquor, Eat.FIT Promoter...";
+                break;
+            case "b9651132-83ff-44e8-923c-ded8b528f4b1": LocalBanda = "  Anushka Bose - Consultant";
+                FunFact = "Fun Fact: Mad about HUGO...";
+                break;
+            case "d01e544a-36c5-4fc6-b7d7-f918f9cc4635": LocalBanda = "  Sheenam Ohrie - VP";
+                FunFact = "Fun Fact: NOT FOUND!";
+                break;
+            case "9114135d-da83-4c3f-9618-a42acf8a3fe0": LocalBanda = "  Sita T - Director";
+                FunFact = "Fun Fact: A Shopaholic! ";
+                break;
+            default: LocalBanda = "unknown";
+        }
+        if (World.banda != LocalBanda) {
+            World.banda = LocalBanda;
+            document.getElementById("username").innerHTML = LocalBanda;
+            document.getElementById("funfact").innerHTML = FunFact;
+            World.hideInfoBar();
+        }
+    },
+
+    imageLost: function () {
+        //video.pause();
+        if (World.targetAcquired) {
+            World.showInfoBar();
+            World.targetAcquired = false;
+            document.getElementById("overlayPicker").className = "none";
+            document.getElementById("inspire").style.display = "none";
+            document.getElementById("patent").style.display = "none";
+            document.getElementById("hack").style.display = "none";
+            document.getElementById("csr").style.display = "none";
+        }
+    },
+
+    /* Takes a screenshot. */
+    captureScreen: function captureScreenFn() {
+        //if (World.targetAcquired) {
+        AR.platform.sendJSONObject({
+            action: "capture_screen"
+        });
+        //}
+    },
+    shareScreen: function shareScreenFn() {
+        document.getElementById("camera").style.display = "none";
+        document.getElementById("sharing").style.display = "none";
+        AR.platform.sendJSONObject({
+            action: "share_screen"
+        });
+    },
+
     onError: function onErrorFn(error) {
         alert(error);
     },
 
     hideInfoBar: function hideInfoBarFn() {
-        document.getElementById("infoBox").style.display = "none";
+        document.getElementById("infoBox").style.display = "block";
+        document.getElementById("footer").style.display = "block";
+
+        document.getElementById("inspire").style.display = "block";
+        document.getElementById("patent").style.display = "block";
+        document.getElementById("hack").style.display = "block";
+        document.getElementById("csr").style.display = "block";
     },
 
     showInfoBar: function worldLoadedFn() {
-        document.getElementById("infoBox").style.display = "table";
+        document.getElementById("infoBox").style.display = "none";
         document.getElementById("loadingMessage").style.display = "none";
+        document.getElementById("footer").style.display = "none";
+
+        document.getElementById("inspire").style.display = "none";
+        document.getElementById("patent").style.display = "none";
+        document.getElementById("hack").style.display = "none";
+        document.getElementById("csr").style.display = "none";
     }
+
 };
 
 World.init();

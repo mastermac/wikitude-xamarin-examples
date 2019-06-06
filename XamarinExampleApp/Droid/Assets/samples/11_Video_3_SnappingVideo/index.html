@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -12,20 +12,114 @@
     <script src="https://www.wikitude.com/libs/architect.js"></script>
     <script type="text/javascript" src="../ade.js"></script>
 
-    <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+    <!-- required to set background transparent & enable "click through" -->
+    <link rel="stylesheet" href="css/jquery-mobile-transparent-ui-overlay.css" />
+
+    <link rel="stylesheet" href="css/default.css" />
+
+    <!-- jquery JS files -->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+    <style>
+    .sidenavLI {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+    }
+    </style>
 </head>
 
 <body>
-<div id="infoBox" class="info">
-    <div class="text">Scan Target &#35;1 (surfer):</div>
-    <div class="icons">
-        <img src='assets/surfer.png'/>
+    <div id="snapContainer"></div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <div id="details1">
+            <h3 style="padding-top:0px; padding-bottom:0px;"><u>Summary</u> :</h3>
+            <p style="padding-top:0px; padding-bottom:0px;" id="summaryData"></p>
+
+            <br />
+
+            <h3 style="padding-top:0px; padding-bottom:0px;"><u>Details</u> :</h3>
+            <ul style="margin-left: 1.5em;" id="detailsData">
+            </ul>
+        </div>
     </div>
-</div>
-<div id="loadingMessage" class="info">Loading ...</div>
+    <div id="infoBox" class="info">
+        <div style="display:table;">
+            <div class="icons">
+                <img src='assets/DellLogo.png' height="40px" />
+            </div>
+            <div class="text" style="font-size: x-large;" id="username">Shubham Gupta</div>
+        </div>
+    </div>
+    <div id="loadingMessage" class="info">Loading ...</div>
 
-<div id="snapContainer"></div>
+    <div data-role="page" id="page1">
+        <div data-role="header-status" id="overlayPicker" class="overlayPicker">
+            <a href="javascript: World.showOverlay(0);" data-role="button" data-inline="true" style="display:none;">
+                <img src="assets/christmas_hat.png">
+            </a>
+            <a href="javascript: World.showOverlay(1);" data-role="button" data-inline="true" style="display:none;">
+                <img src="assets/police_hat.png">
+            </a>
+            <br /><br /><br /><br /><br />
+            <a href="javascript: World.showOverlay(2);" id="inspire" data-role="button" data-inline="true">
+                <img src="assets/inspire.png">
+            </a>
+            <a href="javascript: openNav('patent');" id="patent" class="achivement" data-role="button" data-inline="true">
+                <img src="assets/patent.png">
+            </a>
+            <a href="javascript: openNav('hack');" id="hack" class="achivement" data-role="button" data-inline="true">
+                <img src="assets/hackathon.png">
+            </a>
+            <a href="javascript: openNav('csr');" id="csr" class="achivement" data-role="button" data-inline="true">
+                <img src="assets/csr.png">
+            </a>
+            <a href="javascript: World.clearOverlays();" data-role="button" data-inline="true" style="display:none;">
+                <img src="assets/delete.png">
+            </a>
+            <br /><br /><br />
+            <a href="javascript: World.captureScreen();" data-role="button" id="camera" data-inline="true">
+                <img src="assets/snapshot.png">
+            </a>
+            <a href="javascript: World.shareScreen();" data-role="button" id="sharing" data-inline="true">
+                <img src="assets/share.png">
+            </a>
+        </div>
+    </div>
 
-<script src="js/snappingvideo.js"></script>
+    <div id="footer">
+        <div class="text" id="funfact">Fun Fact: Loves to watch cartoon in midnight!!</div>
+    </div>
+
+    <script src="js/snappingvideo.js"></script>
+    <script>
+    function openNav(type) {
+        switch (type) {
+            case 'patent':
+                document.getElementById("summaryData").innerHTML = "Authorized 1 Patent";
+                document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Monolith Disintegrator</li>";
+                break;
+            case 'hack':
+                document.getElementById("summaryData").innerHTML = "Won 3 Hackathons";
+                document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Hack. Fin</li><li class='sidenavLI'>Mobility Hackathon</li><li class='sidenavLI'>Developers Experience Hackathon</li>";
+                break;
+            case 'csr':
+                document.getElementById("summaryData").innerHTML = "Contributed 20 Hours";
+                document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Robotic session with school kids.</li><li class='sidenavLI'>Wall Painting in colaboration with Youth4Seva</li>";
+                break;
+        }
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("page1").style.display = "none";
+    }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("page1").style.display = "block";
+        }
+    </script>
 </body>
 </html>
