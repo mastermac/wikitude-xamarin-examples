@@ -229,7 +229,7 @@ var World = {
     },
 
     imageLost: function () {
-        video.pause();
+        //video.pause();
         if (World.targetAcquired) {
             World.showInfoBar();
             World.targetAcquired = false;
@@ -238,6 +238,11 @@ var World = {
             document.getElementById("patent").style.display = "none";
             document.getElementById("hack").style.display = "none";
             document.getElementById("csr").style.display = "none";
+            document.getElementById("beardo").style.display = "none";
+            document.getElementById("glasses").style.display = "none";
+            document.getElementById("reset").style.display = "none";
+            document.getElementById("emptyspace").style.display = "block";
+
         }
     },
 

@@ -23,113 +23,41 @@
     <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="jquery/jquery.mobile-1.3.2.min.js"></script>
 
-    <style>
-        .ui-btn-inner {
-            padding: 0px;
-        }
-
-        #overlayPicker {
-            overflow: hidden;
-            width: 15%;
-            margin-right: 2px;
-        }
-
-        .ui-btn-inline {
-            margin-right: 0px;
-            margin-left: 0px;
-        }
-
-        #footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        #footer {
-            background: #BBBBBB;
-            line-height: 2;
-            text-align: center;
-            color: #042E64;
-            font-size: large;
-            font-family: sans-serif;
-            text-shadow: 0 1px 0 #84BAFF;
-            box-shadow: 0 0 15px #00214B;
-            z-index: 1;
-        }
-
-        /*canvas {
-            width: 60%;
-        }*/
-
-        .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #0086CE;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 70px;
-  opacity: 0.75;
-}
-
-.sidenav a, .sidenav p, .sidenav h3, .sidenav li {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  /*font-size: 25px;*/
-  color: white;
-  transition: 0.3s;
-  text-shadow: none;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 60px;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-    </style>
 </head>
 
 <body>
+    <div id="snapContainer"></div>
+
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-        <div id="details1">
-            <h3 style="padding-top:0px; padding-bottom:0px;"><u>Summary</u>:</h3>
-            <p style="padding-top:0px; padding-bottom:0px;">Won 3 Hackathons</p>
+        <div id="details1" style="margin-top: 40px;" class="demo-3">
+            <div>
+                <h1 style="padding-top:0px; padding-bottom:0px; font-size: 10vw; padding: 0px !important;">Summary!</h1>
+            </div>
+            <div class="main">
+                <p style="padding-top:0px; padding-bottom:0px;" id="summaryData"></p>
+            </div>
+
 
             <br />
 
-            <h3 style="padding-top:0px; padding-bottom:0px;"><u>Details</u>:</h3>
-            <ul style="margin-left: 1.5em;">
-                <li style="padding-left: 0px; padding-right: 0px;padding-top: 0px;">Hack. Fin</li>
-                <li style="padding-left: 0px; padding-right: 0px;padding-top: 0px;">Mobility Hackathon</li>
-                <li style="padding-left: 0px; padding-right: 0px;padding-top: 0px;">Developers Experience Hackathon</li>
-            </ul>
+            <div>
+                <h1 style="padding-top:0px; padding-bottom:0px; font-size: 10vw; padding: 0px !important;">Details!</h1>
+            </div>
+
+            <div class="main" id="detailsData">
+                <!-- <ul style="margin-left: 1.5em;" id="detailsData">
+                </ul> -->
+            </div>
         </div>
     </div>
-    <!--<video playsinline muted autoplay loop>
-        <source src="assets/hemal.mp4" type='video/mp4' />
-    </video>-->
     <div id="infoBox" class="info">
         <div style="display:table;">
             <div class="icons">
                 <img src='assets/DellLogo.png' height="40px" />
             </div>
-            <div class="text" style="font-size: x-large;" id="username">Shubham Gupta</div>
+            <div class="text" style="font-size: x-large;" id="username">  Shubham Gupta - SE 2</div>
         </div>
     </div>
     <div id="loadingMessage" class="info">Loading ...</div>
@@ -178,21 +106,98 @@
     </div>
 
 
-    <div id="footer">
-        <div class="text" id="funfact">Fun Fact: Loves to watch cartoon in midnight!!</div>
+    <div id="footer" class="grad1">
+        <div class="text">
+            <span style="color:black;">Fun Fact:</span> <span id="funfact"> Loves to watch cartoon in midnight!!</span>
+        </div>
     </div>
 
     <script src="js/gestures.js"></script>
     <script>
-        function openNav() {
+    function openNav(type) {
+        switch (type) {
+            case 'patent':
+                if (document.getElementById("username").innerHTML.includes("Shubham Gupta")) {
+                    document.getElementById("summaryData").innerHTML = "3 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<p>Projection Enabled Input Interfaces</p><p>Smart CE/CI System</p><p>Dynamic Real Time Questionnaire Generator</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Sita")) {
+                    document.getElementById("summaryData").innerHTML = "0 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<p>Awaiting Authorized Patents</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Kellie")) {
+                    document.getElementById("summaryData").innerHTML = "0 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<p>Awaiting Authorized Patents</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Anushka")) {
+                    document.getElementById("summaryData").innerHTML = "0 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<p>Awaiting Authorized Patents</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Rohan")) {
+                    document.getElementById("summaryData").innerHTML = "2 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<p>Smart CE/CI System</p><p>Dynamic Real Time Questionnaire Generator</p>";
+                }
+                break;
+            case 'hack':
+                if (document.getElementById("username").innerHTML.includes("Shubham Gupta")) {
+                    document.getElementById("summaryData").innerHTML = "Won 1 Hackathon";
+                    document.getElementById("detailsData").innerHTML = "<p>Hack. Fin</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Sita")) {
+                    document.getElementById("summaryData").innerHTML = "Won 3 Hackathons";
+                    document.getElementById("detailsData").innerHTML = "<p>DCE Hackathon</p><p>Mobility Hackathon</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Kellie")) {
+                    document.getElementById("summaryData").innerHTML = "Won 1 Hackathon";
+                    document.getElementById("detailsData").innerHTML = "<p>HR Hackathon</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Anushka")) {
+                    document.getElementById("summaryData").innerHTML = "Won 0 Hackathons";
+                    document.getElementById("detailsData").innerHTML = "<p>Waiting for the participation in the hackathon</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Rohan")) {
+                    document.getElementById("summaryData").innerHTML = "Won 1 Hackathon";
+                    document.getElementById("detailsData").innerHTML = "<p>Hack. Fin</p>";
+                }
+                break;
+            case 'csr':
+                if (document.getElementById("username").innerHTML.includes("Shubham Gupta")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 10 Hours";
+                document.getElementById("detailsData").innerHTML = "<p>Robotic session with school kids.</p><p>Wall Painting in colaboration with Youth4Seva</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Sita")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 15 Hours";
+                    document.getElementById("detailsData").innerHTML = "<p>Bird House Making.</p><p>Science Models For School Children</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Kellie")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 20 Hours";
+                    document.getElementById("detailsData").innerHTML = "<p>Spending Time In Old Age Homes.</p><p>Making Products From E-Waste</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Anushka")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 30 Hours";
+                    document.getElementById("detailsData").innerHTML = "<p>Robotic session with school kids.</p><p>Hour Of Code</p><p>Mid Day Meals Distribution In Goverment Schools.</p>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Rohan")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 18 Hours";
+                    document.getElementById("detailsData").innerHTML = "<p>Bird House Making.</p><p>Wall Painting in colaboration with Youth4Seva</p>";
+                }
+                break;
+        }
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("page1").style.display = "none";
-        }
+    }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("page1").style.display = "block";
-        }
+            }
+        $(function() {
+            causeRepaintsOn = $("h1, h2, h3, p");
+            $(window).resize(function() {
+                causeRepaintsOn.css("z-index", 1);
+            });
+        });
+
     </script>
 </body>
 </html>
