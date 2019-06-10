@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Xamarin.Essentials;
 
 namespace XamarinExampleApp.Droid.Advanced
 {
@@ -230,7 +231,7 @@ namespace XamarinExampleApp.Droid.Advanced
         public async void MakeAnalysisRequest(byte[] byteData)
         {
             HttpClient client = new HttpClient();
-
+            
             // Request headers.
             client.DefaultRequestHeaders.Add(
                 "Ocp-Apim-Subscription-Key", "227cfeff04bc44adb393c19fcbb5da23");
@@ -274,8 +275,14 @@ namespace XamarinExampleApp.Droid.Advanced
                                 int startIndex = response1.Content.ToString().ToLowerInvariant().IndexOf("personid");
                                 string newString = response1.Content.ToString().Substring(startIndex + "personid".Length + 3);
                                 string name = newString.Substring(0, newString.IndexOf('"'));
-
                                 architectView.CallJavascript("World.sendDataFromXam(\"" + name + "\")");
+                                switch (name)
+                                {
+                                    case "96878630-01a9-4a32-8702-ee3a22f5170b":
+                                        await TextToSpeech.SpeakAsync("Kelly is responsible for designing the talent strategy and roadmap to enable Dell’s future workforce in this digital world");
+                                        break;
+
+                                }
                             }
                             else
                             {
