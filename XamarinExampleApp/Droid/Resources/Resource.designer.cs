@@ -1979,44 +1979,44 @@ namespace XamarinExampleApp.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c0061
-			public const int abc_background_cache_hint_selector_material_dark = 2131492961;
-			
 			// aapt resource value: 0x7f0c0062
-			public const int abc_background_cache_hint_selector_material_light = 2131492962;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492962;
 			
 			// aapt resource value: 0x7f0c0063
-			public const int abc_btn_colored_borderless_text_material = 2131492963;
+			public const int abc_background_cache_hint_selector_material_light = 2131492963;
 			
 			// aapt resource value: 0x7f0c0064
-			public const int abc_btn_colored_text_material = 2131492964;
+			public const int abc_btn_colored_borderless_text_material = 2131492964;
 			
 			// aapt resource value: 0x7f0c0065
-			public const int abc_color_highlight_material = 2131492965;
+			public const int abc_btn_colored_text_material = 2131492965;
 			
 			// aapt resource value: 0x7f0c0066
-			public const int abc_hint_foreground_material_dark = 2131492966;
+			public const int abc_color_highlight_material = 2131492966;
 			
 			// aapt resource value: 0x7f0c0067
-			public const int abc_hint_foreground_material_light = 2131492967;
+			public const int abc_hint_foreground_material_dark = 2131492967;
+			
+			// aapt resource value: 0x7f0c0068
+			public const int abc_hint_foreground_material_light = 2131492968;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int abc_input_method_navigation_guard = 2131492868;
 			
-			// aapt resource value: 0x7f0c0068
-			public const int abc_primary_text_disable_only_material_dark = 2131492968;
-			
 			// aapt resource value: 0x7f0c0069
-			public const int abc_primary_text_disable_only_material_light = 2131492969;
+			public const int abc_primary_text_disable_only_material_dark = 2131492969;
 			
 			// aapt resource value: 0x7f0c006a
-			public const int abc_primary_text_material_dark = 2131492970;
+			public const int abc_primary_text_disable_only_material_light = 2131492970;
 			
 			// aapt resource value: 0x7f0c006b
-			public const int abc_primary_text_material_light = 2131492971;
+			public const int abc_primary_text_material_dark = 2131492971;
 			
 			// aapt resource value: 0x7f0c006c
-			public const int abc_search_url_text = 2131492972;
+			public const int abc_primary_text_material_light = 2131492972;
+			
+			// aapt resource value: 0x7f0c006d
+			public const int abc_search_url_text = 2131492973;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int abc_search_url_text_normal = 2131492869;
@@ -2027,29 +2027,29 @@ namespace XamarinExampleApp.Droid
 			// aapt resource value: 0x7f0c0007
 			public const int abc_search_url_text_selected = 2131492871;
 			
-			// aapt resource value: 0x7f0c006d
-			public const int abc_secondary_text_material_dark = 2131492973;
-			
 			// aapt resource value: 0x7f0c006e
-			public const int abc_secondary_text_material_light = 2131492974;
+			public const int abc_secondary_text_material_dark = 2131492974;
 			
 			// aapt resource value: 0x7f0c006f
-			public const int abc_tint_btn_checkable = 2131492975;
+			public const int abc_secondary_text_material_light = 2131492975;
 			
 			// aapt resource value: 0x7f0c0070
-			public const int abc_tint_default = 2131492976;
+			public const int abc_tint_btn_checkable = 2131492976;
 			
 			// aapt resource value: 0x7f0c0071
-			public const int abc_tint_edittext = 2131492977;
+			public const int abc_tint_default = 2131492977;
 			
 			// aapt resource value: 0x7f0c0072
-			public const int abc_tint_seek_thumb = 2131492978;
+			public const int abc_tint_edittext = 2131492978;
 			
 			// aapt resource value: 0x7f0c0073
-			public const int abc_tint_spinner = 2131492979;
+			public const int abc_tint_seek_thumb = 2131492979;
 			
 			// aapt resource value: 0x7f0c0074
-			public const int abc_tint_switch_track = 2131492980;
+			public const int abc_tint_spinner = 2131492980;
+			
+			// aapt resource value: 0x7f0c0075
+			public const int abc_tint_switch_track = 2131492981;
 			
 			// aapt resource value: 0x7f0c0008
 			public const int accent_material_dark = 2131492872;
@@ -2126,8 +2126,8 @@ namespace XamarinExampleApp.Droid
 			// aapt resource value: 0x7f0c0043
 			public const int design_default_color_primary_dark = 2131492931;
 			
-			// aapt resource value: 0x7f0c0075
-			public const int design_error = 2131492981;
+			// aapt resource value: 0x7f0c0076
+			public const int design_error = 2131492982;
 			
 			// aapt resource value: 0x7f0c0044
 			public const int design_fab_shadow_end_color = 2131492932;
@@ -2153,8 +2153,8 @@ namespace XamarinExampleApp.Droid
 			// aapt resource value: 0x7f0c004b
 			public const int design_snackbar_background_color = 2131492939;
 			
-			// aapt resource value: 0x7f0c0076
-			public const int design_tint_password_toggle = 2131492982;
+			// aapt resource value: 0x7f0c0077
+			public const int design_tint_password_toggle = 2131492983;
 			
 			// aapt resource value: 0x7f0c0016
 			public const int dim_foreground_disabled_material_dark = 2131492886;
@@ -2222,71 +2222,71 @@ namespace XamarinExampleApp.Droid
 			// aapt resource value: 0x7f0c002b
 			public const int material_grey_900 = 2131492907;
 			
-			// aapt resource value: 0x7f0c0077
-			public const int mtrl_bottom_nav_colored_item_tint = 2131492983;
-			
 			// aapt resource value: 0x7f0c0078
-			public const int mtrl_bottom_nav_item_tint = 2131492984;
+			public const int mtrl_bottom_nav_colored_item_tint = 2131492984;
+			
+			// aapt resource value: 0x7f0c0079
+			public const int mtrl_bottom_nav_item_tint = 2131492985;
 			
 			// aapt resource value: 0x7f0c004c
 			public const int mtrl_btn_bg_color_disabled = 2131492940;
 			
-			// aapt resource value: 0x7f0c0079
-			public const int mtrl_btn_bg_color_selector = 2131492985;
-			
 			// aapt resource value: 0x7f0c007a
-			public const int mtrl_btn_ripple_color = 2131492986;
+			public const int mtrl_btn_bg_color_selector = 2131492986;
 			
 			// aapt resource value: 0x7f0c007b
-			public const int mtrl_btn_stroke_color_selector = 2131492987;
+			public const int mtrl_btn_ripple_color = 2131492987;
 			
 			// aapt resource value: 0x7f0c007c
-			public const int mtrl_btn_text_btn_ripple_color = 2131492988;
+			public const int mtrl_btn_stroke_color_selector = 2131492988;
+			
+			// aapt resource value: 0x7f0c007d
+			public const int mtrl_btn_text_btn_ripple_color = 2131492989;
 			
 			// aapt resource value: 0x7f0c004d
 			public const int mtrl_btn_text_color_disabled = 2131492941;
 			
-			// aapt resource value: 0x7f0c007d
-			public const int mtrl_btn_text_color_selector = 2131492989;
+			// aapt resource value: 0x7f0c007e
+			public const int mtrl_btn_text_color_selector = 2131492990;
 			
 			// aapt resource value: 0x7f0c004e
 			public const int mtrl_btn_transparent_bg_color = 2131492942;
 			
-			// aapt resource value: 0x7f0c007e
-			public const int mtrl_chip_background_color = 2131492990;
-			
 			// aapt resource value: 0x7f0c007f
-			public const int mtrl_chip_close_icon_tint = 2131492991;
+			public const int mtrl_chip_background_color = 2131492991;
 			
 			// aapt resource value: 0x7f0c0080
-			public const int mtrl_chip_ripple_color = 2131492992;
+			public const int mtrl_chip_close_icon_tint = 2131492992;
 			
 			// aapt resource value: 0x7f0c0081
-			public const int mtrl_chip_text_color = 2131492993;
+			public const int mtrl_chip_ripple_color = 2131492993;
 			
 			// aapt resource value: 0x7f0c0082
-			public const int mtrl_fab_ripple_color = 2131492994;
+			public const int mtrl_chip_text_color = 2131492994;
+			
+			// aapt resource value: 0x7f0c0083
+			public const int mtrl_fab_ripple_color = 2131492995;
 			
 			// aapt resource value: 0x7f0c004f
 			public const int mtrl_scrim_color = 2131492943;
 			
-			// aapt resource value: 0x7f0c0083
-			public const int mtrl_tabs_colored_ripple_color = 2131492995;
-			
 			// aapt resource value: 0x7f0c0084
-			public const int mtrl_tabs_icon_color_selector = 2131492996;
+			public const int mtrl_tabs_colored_ripple_color = 2131492996;
 			
 			// aapt resource value: 0x7f0c0085
-			public const int mtrl_tabs_icon_color_selector_colored = 2131492997;
+			public const int mtrl_tabs_icon_color_selector = 2131492997;
 			
 			// aapt resource value: 0x7f0c0086
-			public const int mtrl_tabs_legacy_text_color_selector = 2131492998;
+			public const int mtrl_tabs_icon_color_selector_colored = 2131492998;
 			
 			// aapt resource value: 0x7f0c0087
-			public const int mtrl_tabs_ripple_color = 2131492999;
+			public const int mtrl_tabs_legacy_text_color_selector = 2131492999;
 			
 			// aapt resource value: 0x7f0c0088
-			public const int mtrl_text_btn_text_color_selector = 2131493000;
+			public const int mtrl_tabs_ripple_color = 2131493000;
+			
+			// aapt resource value: 0x7f0c0089
+			public const int mtrl_text_btn_text_color_selector = 2131493001;
 			
 			// aapt resource value: 0x7f0c0050
 			public const int mtrl_textinput_default_box_stroke_color = 2131492944;
@@ -2357,11 +2357,11 @@ namespace XamarinExampleApp.Droid
 			// aapt resource value: 0x7f0c003b
 			public const int switch_thumb_disabled_material_light = 2131492923;
 			
-			// aapt resource value: 0x7f0c0089
-			public const int switch_thumb_material_dark = 2131493001;
-			
 			// aapt resource value: 0x7f0c008a
-			public const int switch_thumb_material_light = 2131493002;
+			public const int switch_thumb_material_dark = 2131493002;
+			
+			// aapt resource value: 0x7f0c008b
+			public const int switch_thumb_material_light = 2131493003;
 			
 			// aapt resource value: 0x7f0c003c
 			public const int switch_thumb_normal_material_dark = 2131492924;
@@ -2377,6 +2377,9 @@ namespace XamarinExampleApp.Droid
 			
 			// aapt resource value: 0x7f0c005c
 			public const int wikitude_accent = 2131492956;
+			
+			// aapt resource value: 0x7f0c0061
+			public const int wikitude_background_color = 2131492961;
 			
 			// aapt resource value: 0x7f0c0060
 			public const int wikitude_divider = 2131492960;
@@ -3340,26 +3343,26 @@ namespace XamarinExampleApp.Droid
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f020073
-			public const int avd_hide_password_1 = 2130837619;
+			// aapt resource value: 0x7f020077
+			public const int avd_hide_password_1 = 2130837623;
 			
-			// aapt resource value: 0x7f020074
-			public const int avd_hide_password_2 = 2130837620;
+			// aapt resource value: 0x7f020078
+			public const int avd_hide_password_2 = 2130837624;
 			
-			// aapt resource value: 0x7f020075
-			public const int avd_hide_password_3 = 2130837621;
+			// aapt resource value: 0x7f020079
+			public const int avd_hide_password_3 = 2130837625;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f020076
-			public const int avd_show_password_1 = 2130837622;
+			// aapt resource value: 0x7f02007a
+			public const int avd_show_password_1 = 2130837626;
 			
-			// aapt resource value: 0x7f020077
-			public const int avd_show_password_2 = 2130837623;
+			// aapt resource value: 0x7f02007b
+			public const int avd_show_password_2 = 2130837627;
 			
-			// aapt resource value: 0x7f020078
-			public const int avd_show_password_3 = 2130837624;
+			// aapt resource value: 0x7f02007c
+			public const int avd_show_password_3 = 2130837628;
 			
 			// aapt resource value: 0x7f020056
 			public const int design_bottom_navigation_item_background = 2130837590;
@@ -3430,11 +3433,11 @@ namespace XamarinExampleApp.Droid
 			// aapt resource value: 0x7f02006c
 			public const int notification_icon_background = 2130837612;
 			
-			// aapt resource value: 0x7f020071
-			public const int notification_template_icon_bg = 2130837617;
+			// aapt resource value: 0x7f020075
+			public const int notification_template_icon_bg = 2130837621;
 			
-			// aapt resource value: 0x7f020072
-			public const int notification_template_icon_low_bg = 2130837618;
+			// aapt resource value: 0x7f020076
+			public const int notification_template_icon_low_bg = 2130837622;
 			
 			// aapt resource value: 0x7f02006d
 			public const int notification_tile_bg = 2130837613;
@@ -3443,10 +3446,22 @@ namespace XamarinExampleApp.Droid
 			public const int notify_panel_notification_icon_bg = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int tooltip_frame_dark = 2130837615;
+			public const int splash_logo = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int tooltip_frame_light = 2130837616;
+			public const int splash_screen = 2130837616;
+			
+			// aapt resource value: 0x7f020071
+			public const int splashscreen = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int splashScreenImage = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int tooltip_frame_dark = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int tooltip_frame_light = 2130837620;
 			
 			static Drawable()
 			{
@@ -5465,6 +5480,9 @@ namespace XamarinExampleApp.Droid
 			
 			// aapt resource value: 0x7f0b0003
 			public const int CardView_Light = 2131427331;
+			
+			// aapt resource value: 0x7f0b01f9
+			public const int MyTheme_Splash = 2131427833;
 			
 			// aapt resource value: 0x7f0b0073
 			public const int Platform_AppCompat = 2131427443;

@@ -45,8 +45,9 @@ namespace XamarinExampleApp.Droid.Util.adapters
 
             if (isExpanded) 
             {
-                view.SetBackgroundColor(context.Resources.GetColor(Resource.Color.wikitude_primary));
-            } 
+                view.SetBackgroundColor(context.Resources.GetColor(Resource.Color.wikitude_background_color));
+                //view.SetBackgroundColor(context.Resources.GetColor(Resource.Color.wikitude_primary));
+            }
             else 
             {
                 view.SetBackgroundColor(context.Resources.GetColor(Resource.Color.wikitude_white));
