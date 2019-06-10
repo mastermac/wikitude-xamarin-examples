@@ -13,7 +13,7 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:textColorPrimary">@color/wikitude_primary_text</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
     </style>
 
     <style name="AppTheme.Spinner">
@@ -29,6 +29,13 @@
     <style name="SpinnerDropDownItem">
         <item name="android:gravity">right|center_vertical</item>
         <item name="android:paddingRight">16dp</item>
+    </style>
+    <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionBar">true</item>
     </style>
 
 </resources>
