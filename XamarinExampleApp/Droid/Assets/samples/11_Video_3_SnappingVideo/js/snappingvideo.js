@@ -364,9 +364,12 @@ var World = {
             case "9114135d-da83-4c3f-9618-a42acf8a3fe0": LocalBanda = "  Sita T - Director";
                 FunFact = "Fun Fact: A Shopaholic! ";
                 break;
+            case "96878630-01a9-4a32-8702-ee3a22f5170b": LocalBanda = "  Kelly Crantz - VP, HR";
+                FunFact = "Fun Fact: I will fund SPOTLIGHT! :D";
+                break;
             default: LocalBanda = " User Not Registered...";
         }
-        if (World.banda != LocalBanda) {
+        if (World.banda !== LocalBanda) {
             World.banda = LocalBanda;
             document.getElementById("username").innerHTML = LocalBanda;
             document.getElementById("funfact").innerHTML = FunFact;
