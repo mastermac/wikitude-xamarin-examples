@@ -136,6 +136,7 @@
     <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\tracker.wtc" />
     <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\face.wtc" />
     <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\samples\samples1.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
@@ -912,12 +913,6 @@
     <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\share.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\samples\11_Video_4_Bonus-TransparentVideo\assets\hemal.mp4" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\hemal.mp4" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\play.png" />
   </ItemGroup>
   <ItemGroup>
@@ -958,6 +953,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\css\jquery-mobile-transparent-ui-overlay.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\christmas_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\assets\police_hat.png" />
   </ItemGroup>
   <Import Project="..\XamarinExampleApp\XamarinExampleApp.projitems" Label="Shared" Condition="Exists('..\XamarinExampleApp\XamarinExampleApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
