@@ -11,6 +11,11 @@
     opacity: 1;
 }
 
+@font-face {
+    font-family: 'lucidacasual';
+    src: url('lucidacasual.ttf');
+}
+
 #infoBox {
     display: block;
 }
@@ -138,7 +143,7 @@
     text-align: center;
     color: #fff;
     /* font-size: large; */
-    font-family: cursive;
+    font-family: lucidacasual;
     text-shadow: none;
     box-shadow: 0 0 15px #00214B;
     /*z-index: 1;*/
@@ -218,28 +223,28 @@ body {
 }
 
 h1 {
-  text-align: center;
-  font-weight: normal;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 8em;
-  white-space: nowrap;
-  font-size: 12vw;
-  z-index: 1000;
-  font-family: 'Bangers', cursive;
-  text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
-  -moz-transform: skew(0, -6.7deg);
-  -ms-transform: skew(0, -6.7deg);
-  -webkit-transform: skew(0, -6.7deg);
-  transform: skew(0, -6.7deg);
-  -moz-transition-property: font-size;
-  -o-transition-property: font-size;
-  -webkit-transition-property: font-size;
-  transition-property: font-size;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+    text-align: center;
+    font-weight: normal;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 8em;
+    white-space: nowrap;
+    font-size: 12vw;
+    z-index: 1000;
+    font-family: 'Bangers', lucidacasual;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
+    -moz-transform: skew(0, -6.7deg);
+    -ms-transform: skew(0, -6.7deg);
+    -webkit-transform: skew(0, -6.7deg);
+    transform: skew(0, -6.7deg);
+    -moz-transition-property: font-size;
+    -o-transition-property: font-size;
+    -webkit-transition-property: font-size;
+    transition-property: font-size;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 @media screen and (max-width: 50em) {
@@ -270,7 +275,7 @@ h1 {
     margin: 1em 0 .6em 0;
     font-weight: normal;
     color: white;
-    font-family: cursive;
+    font-family: lucidacasual;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
     position: relative;
     /* color: #6Cf; */

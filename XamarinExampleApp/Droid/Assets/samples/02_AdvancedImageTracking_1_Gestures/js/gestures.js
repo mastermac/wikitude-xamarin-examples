@@ -1,5 +1,5 @@
 var defaultScaleValue = 0.5;
-var video;
+//var video;
 var previousRotationValue = [];
 var previousScaleValue = [];
 
@@ -17,7 +17,9 @@ var World = {
         "assets/patent.png",
         "assets/hackathon.png",
         "assets/hackathon.png",
-        "assets/csr.png"
+        "assets/csr.png",
+        "assets/beard_03.png",
+        "assets/mirror_sunglasses.png"
     ],
     imageTrackables: [],
     overlays: [],
@@ -50,31 +52,31 @@ var World = {
             onTargetsLoaded: World.showInfoBar,
             onError: World.onError
         });
-        video = new AR.VideoDrawable("assets/hemal.mp4", 0.9, {
-            translate: {
-                x: -0.5,
-                y: 0.0
-            },
-            isTransparent: true,
-            onError: World.onError
-        });
-        video.play(-1);
-        video.pause();
+        //video = new AR.VideoDrawable("assets/hemal.mp4", 0.9, {
+        //    translate: {
+        //        x: -0.5,
+        //        y: 0.0
+        //    },
+        //    isTransparent: true,
+        //    onError: World.onError
+        //});
+        //video.play(-1);
+        //video.pause();
 
-        this.trackable = new AR.ImageTrackable(this.tracker, "*", {
-            drawables: {
-                cam: [video]
-            },
-            onImageRecognized: function onImageRecognizedFn() {
-                video.resume();
-                World.showInfoBar();
-            },
-            onImageLost: function onImageLostFn() {
-                video.pause();
-                World.hideInfoBar();
-            },
-            onError: World.onError
-        });
+        //this.trackable = new AR.ImageTrackable(this.tracker, "*", {
+        //    drawables: {
+        //        cam: [video]
+        //    },
+        //    onImageRecognized: function onImageRecognizedFn() {
+        //        video.resume();
+        //        World.showInfoBar();
+        //    },
+        //    onImageLost: function onImageLostFn() {
+        //        video.pause();
+        //        World.hideInfoBar();
+        //    },
+        //    onError: World.onError
+        //});
 
         World.initPositionValues();
         for (var i = 0; i < this.paths.length; i++) {
@@ -183,7 +185,7 @@ var World = {
     },
 
     imageRecognized: function () {
-        video.resume();
+        //video.resume();
         if (!World.targetAcquired) {
             World.targetAcquired = true;
             document.getElementById("overlayPicker").className = "overlayPicker";
@@ -218,7 +220,7 @@ var World = {
                 break;
             default: LocalBanda = "unknown";
         }
-        if (World.banda != LocalBanda) {
+        if (World.banda !== LocalBanda) {
             World.banda = LocalBanda;
             document.getElementById("username").innerHTML = LocalBanda;
             document.getElementById("funfact").innerHTML = FunFact;
@@ -315,9 +317,6 @@ var World = {
             action: "share_screen"
         });
     },
-    playButton: function playButtonFn() {
-        video.resume();
-    },
     showRecogs: function showRecogsFn() {
         $("#poi-detail-title").html("Title");
         $("#poi-detail-description").html("description");
@@ -339,6 +338,12 @@ var World = {
         document.getElementById("patent").style.display = "block";
         document.getElementById("hack").style.display = "block";
         document.getElementById("csr").style.display = "block";
+
+        document.getElementById("beardo").style.display = "block";
+        document.getElementById("glasses").style.display = "block";
+        document.getElementById("reset").style.display = "block";
+        document.getElementById("emptyspace").style.display = "none";
+
     },
 
     showInfoBar: function worldLoadedFn() {
@@ -350,6 +355,11 @@ var World = {
         document.getElementById("patent").style.display = "none";
         document.getElementById("hack").style.display = "none";
         document.getElementById("csr").style.display = "none";
+
+        document.getElementById("beardo").style.display = "none";
+        document.getElementById("glasses").style.display = "none";
+        document.getElementById("reset").style.display = "none";
+        document.getElementById("emptyspace").style.display = "block";
     }
 };
 

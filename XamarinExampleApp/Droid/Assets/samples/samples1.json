@@ -1,9 +1,9 @@
 [
   {
-    "windowTitle": "ver 0.1",
+    "windowTitle": "Pilot",
     "samples": [
       {
-        "title": "Demo 1",
+        "title": "Instant Recognition",
         "path": "11_Video_3_SnappingVideo/index.html",
         "requiredFeatures": [
           "image_tracking"
@@ -15,15 +15,16 @@
         "requiredExtension": "Screenshot"
       },
       {
-        "title": "Demo 2",
-        "path": "11_Video_4_Bonus-TransparentVideo/index.html",
+        "title": "Achievement Canvas",
+        "path": "02_AdvancedImageTracking_1_Gestures/index.html",
         "requiredFeatures": [
           "image_tracking"
         ],
         "startupConfiguration": {
           "camera_position": "back",
           "camera_resolution": "auto"
-        }
+        },
+        "requiredExtension": "Screenshot"
       }
 
     ]
