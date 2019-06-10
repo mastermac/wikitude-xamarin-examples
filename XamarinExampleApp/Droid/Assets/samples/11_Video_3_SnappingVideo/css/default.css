@@ -19,7 +19,9 @@
     display: table-cell;
     vertical-align: middle;
     text-align: left;
-    font-weight: bold;
+    /* font-weight: bold; */
+    text-shadow: none;
+    padding-left: 10px;
 }
 
 #infoBox .icons {
@@ -134,10 +136,10 @@
     background: #BBBBBB;
     line-height: 2;
     text-align: center;
-    color: #042E64;
-    font-size: large;
-    font-family: sans-serif;
-    text-shadow: 0 1px 0 #84BAFF;
+    color: #fff;
+    /* font-size: large; */
+    font-family: cursive;
+    text-shadow: none;
     box-shadow: 0 0 15px #00214B;
     /*z-index: 1;*/
 }
@@ -195,3 +197,10 @@
         }
 }
 
+.grad1 {
+    background: red !important;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet) !important;
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet) !important;
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet) !important;
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet) !important;
+}

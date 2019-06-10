@@ -279,7 +279,7 @@ namespace XamarinExampleApp.Droid.Advanced
                                 switch (name)
                                 {
                                     case "96878630-01a9-4a32-8702-ee3a22f5170b":
-                                        await TextToSpeech.SpeakAsync("Kelly is responsible for designing the talent strategy and roadmap to enable Dell’s future workforce in this digital world");
+                                        await TextToSpeech.SpeakAsync("Kellie is responsible for designing the talent strategy and roadmap to enable Dell’s future workforce in this digital world");
                                         break;
 
                                 }

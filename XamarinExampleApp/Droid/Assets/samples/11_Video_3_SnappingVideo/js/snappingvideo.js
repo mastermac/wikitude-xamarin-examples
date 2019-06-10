@@ -347,25 +347,25 @@ var World = {
         var FunFact = "";
         switch (name) {
             case "74aa5027-ba7b-4141-892a-71fe71f79ee5": LocalBanda = "  Shubham Gupta - SE 2";
-                FunFact = "Fun Fact: Loves to watch cartoon in midnight!!";
+                FunFact = " Loves to watch cartoon in midnight!!";
                 break;
             case "20f57314-b308-4786-8085-d75d312c1ea9": 
             case "c83988ab-8646-4e11-a269-b2e8cd38eab2": 
             case "387b5f15-19da-4c70-b1ca-3c484edb880f": 
             case "cfbce091-3809-4862-9664-f1e6ab2b0778": LocalBanda = "  Rohan Sharma - SE 2";
-                FunFact = "Fun Fact: Can chug liquor, Eat.FIT Promoter...";
+                FunFact = " Can chug liquor, Eat.FIT Promoter...";
                 break;
             case "b9651132-83ff-44e8-923c-ded8b528f4b1": LocalBanda = "  Anushka Bose - Consultant";
-                FunFact = "Fun Fact: Mad about HUGO...";
+                FunFact = " Mad about HUGO...";
                 break;
             case "d01e544a-36c5-4fc6-b7d7-f918f9cc4635": LocalBanda = "  Sheenam Ohrie - VP";
-                FunFact = "Fun Fact: NOT FOUND!";
+                FunFact = " NOT FOUND!";
                 break;
             case "9114135d-da83-4c3f-9618-a42acf8a3fe0": LocalBanda = "  Sita T - Director";
-                FunFact = "Fun Fact: A Shopaholic! ";
+                FunFact = " A Shopaholic! ";
                 break;
-            case "96878630-01a9-4a32-8702-ee3a22f5170b": LocalBanda = "  Kelly Crantz - VP, HR";
-                FunFact = "Fun Fact: I will fund SPOTLIGHT! :D";
+            case "96878630-01a9-4a32-8702-ee3a22f5170b": LocalBanda = "  Kellie Crantz - VP, HR";
+                FunFact = " I will fund SPOTLIGHT! :D";
                 break;
             default: LocalBanda = " User Not Registered...";
         }
