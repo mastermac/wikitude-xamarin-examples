@@ -100,16 +100,70 @@
     function openNav(type) {
         switch (type) {
             case 'patent':
-                document.getElementById("summaryData").innerHTML = "Authorized 1 Patent";
-                document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Monolith Disintegrator</li>";
+                if (document.getElementById("username").innerHTML.includes("Shubham Gupta")) {
+                    document.getElementById("summaryData").innerHTML = "3 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Projection Enabled Input Interfaces</li><li class='sidenavLI'>Smart CE/CI System</li><li class='sidenavLI'>Dynamic Real Time Questionnaire Generator</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Sita")) {
+                    document.getElementById("summaryData").innerHTML = "0 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Awaiting Authorized Patents</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Kelly")) {
+                    document.getElementById("summaryData").innerHTML = "0 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Awaiting Authorized Patents</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Anushka")) {
+                    document.getElementById("summaryData").innerHTML = "0 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Awaiting Authorized Patents</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Rohan")) {
+                    document.getElementById("summaryData").innerHTML = "2 Authorized Patents";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Smart CE/CI System</li><li class='sidenavLI'>Dynamic Real Time Questionnaire Generator</li>";
+                }
                 break;
             case 'hack':
-                document.getElementById("summaryData").innerHTML = "Won 3 Hackathons";
-                document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Hack. Fin</li><li class='sidenavLI'>Mobility Hackathon</li><li class='sidenavLI'>Developers Experience Hackathon</li>";
+                if (document.getElementById("username").innerHTML.includes("Shubham Gupta")) {
+                    document.getElementById("summaryData").innerHTML = "Won 1 Hackathon";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Hack. Fin</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Sita")) {
+                    document.getElementById("summaryData").innerHTML = "Won 3 Hackathons";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>DCE Hackathon</li><li class='sidenavLI'>Mobility Hackathon</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Kelly")) {
+                    document.getElementById("summaryData").innerHTML = "Won 1 Hackathon";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>HR Hackathon</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Anushka")) {
+                    document.getElementById("summaryData").innerHTML = "Won 0 Hackathons";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Waiting for the participation in the hackathon</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Rohan")) {
+                    document.getElementById("summaryData").innerHTML = "Won 1 Hackathon";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Hack. Fin</li>";
+                }
                 break;
             case 'csr':
-                document.getElementById("summaryData").innerHTML = "Contributed 20 Hours";
+                if (document.getElementById("username").innerHTML.includes("Shubham Gupta")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 10 Hours";
                 document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Robotic session with school kids.</li><li class='sidenavLI'>Wall Painting in colaboration with Youth4Seva</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Sita")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 15 Hours";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Bird House Making.</li><li class='sidenavLI'>Science Models For School Children</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Kelly")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 20 Hours";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Spending Time In Old Age Homes.</li><li class='sidenavLI'>Making Products From E-Waste</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Anushka")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 30 Hours";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Robotic session with school kids.</li><li class='sidenavLI'>Hour Of Code</li><li class='sidenavLI'>Mid Day Meals Distribution In Goverment Schools.</li>";
+                }
+                else if (document.getElementById("username").innerHTML.includes("Rohan")) {
+                    document.getElementById("summaryData").innerHTML = "Contributed 18 Hours";
+                    document.getElementById("detailsData").innerHTML = "<li class='sidenavLI'>Bird House Making.</li><li class='sidenavLI'>Wall Painting in colaboration with Youth4Seva</li>";
+                }
                 break;
         }
             document.getElementById("mySidenav").style.width = "250px";
