@@ -235,58 +235,52 @@ namespace XamarinExampleApp.Droid.Advanced
             client.DefaultRequestHeaders.Add(
                 "Ocp-Apim-Subscription-Key", "227cfeff04bc44adb393c19fcbb5da23");
 
-            // Request parameters. A third optional parameter is "details".
-            string requestParameters = "returnFaceId=true&returnFaceLandmarks=false" +
-                "&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses," +
-                "emotion,hair,makeup,occlusion,accessories,blur,exposure,noise";
+            string requestParameters = "returnFaceId=true";
 
-            // Assemble the URI for the REST API Call.
             string uri = "https://centralindia.api.cognitive.microsoft.com/face/v1.0/detect" + "?" + requestParameters;
 
             HttpResponseMessage response;
 
-            // Request body. Posts a locally stored JPEG image.
-
             using (ByteArrayContent content = new ByteArrayContent(byteData))
             {
-                // This example uses content type "application/octet-stream".
-                // The other content types you can use are "application/json"
-                // and "multipart/form-data".
-                content.Headers.ContentType =
-                    new MediaTypeHeaderValue("application/octet-stream");
-
-                // Execute the REST API call.
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
                 response = await client.PostAsync(uri, content);
-
-                // Get the JSON response.
                 try
                 {
                     string contentString = await response.Content.ReadAsStringAsync();
                     if (contentString.ToLowerInvariant().Contains("faceid"))
                     {
-                        contentString = contentString.Substring(1, contentString.Length - 2);
-                        RootObject JsonConverted = JsonConvert.DeserializeObject<RootObject>(contentString);
-                        string FACEID = JsonConverted.faceId;
-
-                        var client1 = new RestClient("https://centralindia.api.cognitive.microsoft.com/face/v1.0/identify");
-                        var request = new RestRequest(Method.POST);
-                        request.AddHeader("postman-token", "bab5b421-1b8d-8a55-a72d-7bb21392cf5a");
-                        request.AddHeader("cache-control", "no-cache");
-                        request.AddHeader("content-type", "application/json");
-                        request.AddHeader("ocp-apim-subscription-key", "227cfeff04bc44adb393c19fcbb5da23");
-                        request.AddParameter("application/json", "{\r\n    \"largePersonGroupId\": \"friends\",\r\n    \"faceIds\": [\r\n        \"" + FACEID + "\"\r\n    ],\r\n    \"maxNumOfCandidatesReturned\": 1,\r\n    \"confidenceThreshold\": 0.5\r\n}\r\n", ParameterType.RequestBody);
-                        IRestResponse response1 = client1.Execute(request);
-                        if (response1.Content.ToString().ToLowerInvariant().Contains("personid"))
+                        List<RootObject> JSONC = JsonConvert.DeserializeObject<List<RootObject>>(contentString);
+                        if (JSONC.Count > 0)
                         {
-                            var finalConvert = JsonConvert.DeserializeObject(response1.Content);
+                            string FACEid = "";
+                            for(int i = 0; i < JSONC.Count; i++)
+                            {
+                                FACEid += JSONC[i].faceId + ",";
+                            }
+                            FACEid = FACEid.Substring(0, FACEid.Length - 1);
+                            FACEid = FACEid.Replace(",", "\",\"");
 
-                            var custom = ((Newtonsoft.Json.Linq.JContainer)((Newtonsoft.Json.Linq.JContainer)((Newtonsoft.Json.Linq.JContainer)((Newtonsoft.Json.Linq.JContainer)((Newtonsoft.Json.Linq.JContainer)((Newtonsoft.Json.Linq.JContainer)finalConvert).First).First.Next).First).First).First).First;
-                            var name = custom.ToString().Replace("{", "").Replace("}", "");
-                            architectView.CallJavascript("World.sendDataFromXam(\"" + name + "\")");
-                        }
-                        else
-                        {
-                            architectView.CallJavascript("World.sendDataFromXam(\"unknown\")");
+                            var client1 = new RestClient("https://centralindia.api.cognitive.microsoft.com/face/v1.0/identify");
+                            var request = new RestRequest(Method.POST);
+                            request.AddHeader("postman-token", "bab5b421-1b8d-8a55-a72d-7bb21392cf5a");
+                            request.AddHeader("cache-control", "no-cache");
+                            request.AddHeader("content-type", "application/json");
+                            request.AddHeader("ocp-apim-subscription-key", "227cfeff04bc44adb393c19fcbb5da23");
+                            request.AddParameter("application/json", "{\r\n    \"largePersonGroupId\": \"friends\",\r\n    \"faceIds\": [\r\n        \"" + FACEid + "\"\r\n    ],\r\n    \"maxNumOfCandidatesReturned\": 1,\r\n    \"confidenceThreshold\": 0.5\r\n}\r\n", ParameterType.RequestBody);
+                            IRestResponse response1 = client1.Execute(request);
+                            if (response1.Content.ToString().ToLowerInvariant().Contains("personid"))
+                            {
+                                int startIndex = response1.Content.ToString().ToLowerInvariant().IndexOf("personid");
+                                string newString = response1.Content.ToString().Substring(startIndex + "personid".Length + 3);
+                                string name = newString.Substring(0, newString.IndexOf('"'));
+
+                                architectView.CallJavascript("World.sendDataFromXam(\"" + name + "\")");
+                            }
+                            else
+                            {
+                                architectView.CallJavascript("World.sendDataFromXam(\"unknown\")");
+                            }
                         }
                     }
                 }

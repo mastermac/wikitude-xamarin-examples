@@ -1,18 +1,19 @@
 [
-   {
-        "samples": [
-            {
-                "title": "Snapping Video",
-                "path": "11_Video_3_SnappingVideo/index.html",
-                "requiredFeatures": [
-                    "image_tracking"
-                ],
-                "startupConfiguration": {
-                    "camera_position": "back",
-                    "camera_resolution": "auto"
-                },
-                "requiredExtension": "Screenshot"
-            }
-        ]
-    }
+  {
+    "windowTitle": "ver 0.1",
+    "samples": [
+      {
+        "title": "Prototype",
+        "path": "11_Video_3_SnappingVideo/index.html",
+        "requiredFeatures": [
+          "image_tracking"
+        ],
+        "startupConfiguration": {
+          "camera_position": "back",
+          "camera_resolution": "auto"
+        },
+        "requiredExtension": "Screenshot"
+      }
+    ]
+  }
 ]

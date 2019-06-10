@@ -20,7 +20,7 @@ namespace XamarinExampleApp.Droid
     * The MainActivity is used to display the list of all ArExperiences and handles the runtime
     * permissions for them.
     */
-    [Activity(Label = "Xamarin Example App", MainLauncher = true, Icon = "@mipmap/ic_launcher")]
+    [Activity(Label = "Spotlight", MainLauncher = true, Icon = "@mipmap/ic_launcher")]
     public class MainActivity : AppCompatActivity, IPermissionManagerPermissionManagerCallback
     {
         private ExpandableListView listView;
@@ -36,7 +36,7 @@ namespace XamarinExampleApp.Droid
              * Loads the experience definiton file from the assets and parses the content to 
              * ArExperienceGroups. 
              */
-            var stream = Assets.Open("samples/samples.json");
+            var stream = Assets.Open("samples/samples1.json");
             StreamReader sr = new StreamReader(stream);
             experienceGroups = ArExperienceManager.ParseExampleDefintion(sr.ReadToEnd());
             sr.Close();

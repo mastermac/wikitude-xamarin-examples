@@ -349,6 +349,9 @@ var World = {
             case "74aa5027-ba7b-4141-892a-71fe71f79ee5": LocalBanda = "  Shubham Gupta - SE 2";
                 FunFact = "Fun Fact: Loves to watch cartoon in midnight!!";
                 break;
+            case "20f57314-b308-4786-8085-d75d312c1ea9": 
+            case "c83988ab-8646-4e11-a269-b2e8cd38eab2": 
+            case "387b5f15-19da-4c70-b1ca-3c484edb880f": 
             case "cfbce091-3809-4862-9664-f1e6ab2b0778": LocalBanda = "  Rohan Sharma - SE 2";
                 FunFact = "Fun Fact: Can chug liquor, Eat.FIT Promoter...";
                 break;

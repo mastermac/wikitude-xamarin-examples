@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="8.4.0" package="com.wikitude.xamarinexample">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="8.4.0" package="com.wikitude.xamarinexample" android:installLocation="internalOnly">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +14,7 @@
 	<uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
 	<uses-feature android:name="android.hardware.sensor.compass" android:required="false" />
 	<uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false" />
-	<application android:label="Xamarin Examples" android:theme="@style/AppTheme" android:resizeableActivity="false">
+	<application android:label="Spotlight" android:theme="@style/AppTheme" android:resizeableActivity="false">
 		<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.wikitude.xamarinexample.provider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
 		</provider>
