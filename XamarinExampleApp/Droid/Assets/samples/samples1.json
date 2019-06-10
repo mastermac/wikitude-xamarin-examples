@@ -3,7 +3,7 @@
     "windowTitle": "ver 0.1",
     "samples": [
       {
-        "title": "Prototype",
+        "title": "Demo 1",
         "path": "11_Video_3_SnappingVideo/index.html",
         "requiredFeatures": [
           "image_tracking"
@@ -13,7 +13,19 @@
           "camera_resolution": "auto"
         },
         "requiredExtension": "Screenshot"
+      },
+      {
+        "title": "Demo 2",
+        "path": "11_Video_4_Bonus-TransparentVideo/index.html",
+        "requiredFeatures": [
+          "image_tracking"
+        ],
+        "startupConfiguration": {
+          "camera_position": "back",
+          "camera_resolution": "auto"
+        }
       }
+
     ]
   }
 ]
