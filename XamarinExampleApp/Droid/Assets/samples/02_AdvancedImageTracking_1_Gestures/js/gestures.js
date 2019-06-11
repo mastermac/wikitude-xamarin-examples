@@ -38,7 +38,7 @@ var World = {
             Each target in the target collection is identified by its target name. By using this
             target name, it is possible to create an AR.ImageTrackable for every target in the target collection.
          */
-        this.targetCollectionResource = new AR.TargetCollectionResource("assets/tracker.wtc", {
+        this.targetCollectionResource = new AR.TargetCollectionResource("assets/kelly_tracker.wtc", {
             onError: World.onError
         });
 
@@ -186,6 +186,8 @@ var World = {
 
     imageRecognized: function () {
         //video.resume();
+        document.getElementById("patent").style.display = "none";
+        document.getElementById("hack").style.display = "none";
         if (!World.targetAcquired) {
             World.targetAcquired = true;
             document.getElementById("overlayPicker").className = "overlayPicker";

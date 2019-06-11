@@ -210,6 +210,7 @@
     <AndroidAsset Include="Assets\samples\samples1.json" />
     <AndroidAsset Include="Assets\samples\11_Video_3_SnappingVideo\css\lucidacasual.ttf" />
     <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\css\lucidacasual.ttf" />
+    <AndroidAsset Include="Assets\samples\02_AdvancedImageTracking_1_Gestures\assets\kelly_tracker.wtc" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
