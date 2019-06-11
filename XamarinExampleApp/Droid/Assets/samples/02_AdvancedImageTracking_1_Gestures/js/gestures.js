@@ -2,7 +2,7 @@ var defaultScaleValue = 0.5;
 //var video;
 var previousRotationValue = [];
 var previousScaleValue = [];
-
+var tempFlag = false;
 var oneFingerGestureAllowed = false;
 
 AR.context.on2FingerGestureStarted = function() {
@@ -188,6 +188,10 @@ var World = {
         //video.resume();
         document.getElementById("patent").style.display = "none";
         document.getElementById("hack").style.display = "none";
+        if (!tempFlag) {
+            World.speakAudio();
+            tempFlag = true;
+        }
         if (!World.targetAcquired) {
             World.targetAcquired = true;
             document.getElementById("overlayPicker").className = "overlayPicker";
@@ -231,6 +235,7 @@ var World = {
     },
 
     imageLost: function () {
+        tempFlag = false;
         //video.pause();
         if (World.targetAcquired) {
             World.showInfoBar();
@@ -322,6 +327,11 @@ var World = {
         document.getElementById("sharing").style.display = "none";
         AR.platform.sendJSONObject({
             action: "share_screen"
+        });
+    },
+    speakAudio: function speakAudioFn() {
+        AR.platform.sendJSONObject({
+            action: "speak_screen"
         });
     },
     showRecogs: function showRecogsFn() {

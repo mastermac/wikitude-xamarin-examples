@@ -189,6 +189,19 @@ namespace XamarinExampleApp.Droid.Advanced
 
                 architectView.CaptureScreen(ArchitectView.CaptureScreenCallback.CaptureModeCamAndWebview, this);
             }
+            else if (jsonObject.GetString("action") == "speak_screen")
+            {
+                /*
+                 * ArchitectView.CaptureScreen has two different modes:
+                 *  - CaptureModeCamAndWebview which will capture the camera and web-view on top of it.
+                 *  - CaptureModeCam which will capture ONLY the camera and its content (AR.Drawables).
+                 *
+                 * OnScreenCaptured will be called once the ArchitectView has processed the screen capturing and will
+                 * provide a Bitmap containing the screenshot.
+                 */
+                usecase = "speak_screen";
+                SpeakKellieAudio();
+            }
         }
 
         public void OnScreenCaptured(Bitmap screenCapture)
@@ -226,6 +239,10 @@ namespace XamarinExampleApp.Droid.Advanced
                 ArchitectView.PermissionManager.CheckPermissions(this, new string[] { Manifest.Permission.WriteExternalStorage }, 123, this);
                 architectView.CallJavascript("World.resetCamButton()");
             }
+        }
+        public async void SpeakKellieAudio()
+        {
+            await TextToSpeech.SpeakAsync("Kellie is responsible for designing the talent strategy and roadmap to enable Dell’s future workforce in this digital world");
         }
         // Gets the analysis of the specified image by using the Face REST API.
         public async void MakeAnalysisRequest(byte[] byteData)
