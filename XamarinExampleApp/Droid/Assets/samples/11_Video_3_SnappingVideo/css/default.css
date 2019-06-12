@@ -203,7 +203,6 @@
 }
 
 .grad1 {
-    background: red !important;
     background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet) !important;
     background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet) !important;
     background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet) !important;
@@ -213,9 +212,9 @@
 
 
 @import url(https://fonts.googleapis.com/css?family=Bangers);
-body {
+/*body {
   background-color: #ED6565;
-}
+}*/
 
 .wrap {
   padding: 5em 0.5em;

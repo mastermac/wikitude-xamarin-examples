@@ -367,16 +367,30 @@ var World = {
             case "96878630-01a9-4a32-8702-ee3a22f5170b": LocalBanda = "  Kellie Crantz - VP, HR";
                 FunFact = " I will fund SPOTLIGHT! :D";
                 break;
+            case "9114135d-da83-4c3f-9618-a42acf8a3fe0MAC": LocalBanda = "  Sita T - Director";
+                FunFact = " A Shopaholic! ";
+                break; 
             default: LocalBanda = " User Not Registered...";
         }
-        if (World.banda !== LocalBanda) {
-            World.banda = LocalBanda;
-            document.getElementById("username").innerHTML = LocalBanda;
-            document.getElementById("funfact").innerHTML = FunFact;
-            World.hideInfoBar();
+        if (name == "9114135d-da83-4c3f-9618-a42acf8a3fe0MAC") {
+            setTimeout(function () {
+                if (World.banda !== LocalBanda) {
+                    World.banda = LocalBanda;
+                    document.getElementById("username").innerHTML = LocalBanda;
+                    document.getElementById("funfact").innerHTML = FunFact;
+                    World.hideInfoBar();
+                }
+            }, 3000);
+        }
+        else {
+            if (World.banda !== LocalBanda) {
+                World.banda = LocalBanda;
+                document.getElementById("username").innerHTML = LocalBanda;
+                document.getElementById("funfact").innerHTML = FunFact;
+                World.hideInfoBar();
+            }
         }
     },
-
     imageLost: function () {
         //video.pause();
         if (World.targetAcquired) {
